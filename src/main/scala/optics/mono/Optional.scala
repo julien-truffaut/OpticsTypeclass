@@ -1,6 +1,6 @@
 package optics.mono
 
-trait Optional[From, To] extends Traversal[From, To] { self =>
+trait Optional[From, To] /* extends Traversal[From, To] */ { self =>
   def andThen[Next](other: Optional[To, Next]): Optional[From, Next] = ???
 }
 
