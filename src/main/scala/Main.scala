@@ -6,11 +6,11 @@ object Main {
      val list: Optional[Int, List[String]] = Optional()
      val map: Optional[Int, Map[String, Int]] = Optional()
 
-     list.andThen(Index1.index(2))
-     map.andThen(Index1.index("foo"))
+     list.andThen(Index1.index(2): Optional[List[String], String])
+     list.andThenOptional(Index1.index(2))
+     list.andThen(Index1.index(2)) // does not compile
 
-     list.andThen(Index2.index(2))
-     map.andThen(Index2.index("foo"))
+     map.andThen(Index1.index("foo"))
   }
 
 }
